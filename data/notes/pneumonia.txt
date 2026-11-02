@@ -1,0 +1,31 @@
+# note: pneumonia
+# synthetic. community-acquired pneumonia, discharged on oral antibiotics.
+PATIENT DISCHARGE INSTRUCTIONS - RESPIRATORY
+
+Diagnosis: community-acquired pneumonia, right lower lobe.
+
+MEDICATIONS
+1. Amoxicillin-clavulanate 875 mg PO BID for 7 days. Do not discontinue early even if symptoms resolve.
+2. Azithromycin 250 mg PO QD for 4 more days.
+3. Acetaminophen 650 mg PO q6h PRN fever or pleuritic pain.
+4. Albuterol inhaler, 2 puffs q4h PRN wheezing or dyspnea.
+
+SUPPORTIVE CARE
+- Use the incentive spirometer 10 times every hour while awake.
+- Maintain hydration.
+- Avoid smoking. Nicotine cessation resources are attached.
+
+ACTIVITY
+- No strenuous exertion for 2 weeks.
+- Return to work when you have been afebrile for 48 hours.
+
+FOLLOW-UP
+- Follow up with your primary care physician in 5 days.
+- A repeat chest radiograph is indicated in 6 weeks.
+
+RETURN TO THE EMERGENCY DEPARTMENT IMMEDIATELY FOR:
+- Dyspnea at rest
+- Temperature above 102 F
+- Confusion or lethargy
+- Hemoptysis
+- Chest pain

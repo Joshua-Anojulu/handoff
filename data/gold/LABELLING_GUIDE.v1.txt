@@ -1,0 +1,19 @@
+CANONICAL VALUE SPACE (use exactly these strings)
+
+follow_up.who, one of:
+  anticoagulation clinic, cardiology, gastroenterology, lab, nephrology, neurology, obstetrics, oncology, orthopedics, physical therapy, primary care, pulmonology, surgeon, wound care, clinic
+
+red_flag.symptom, one of:
+  abdominal rigidity, advancing redness, black stool, bleeding, bleeding gums, blood in urine,
+  bruising, calf pain, chest pain, confusion, coughing blood, crepitus, dyspnea, fainting,
+  fever, fluid from ears or nose, head injury, headache, high blood sugar, hopelessness,
+  incision opening, ketones, low blood sugar, low urine output, no urine, one-sided weakness,
+  orthopnea, palpitations, rash, rectal bleeding, seizure, severe pain, skin necrosis, slurred
+  speech, somnolence, sputum change, sternal instability, swelling, tendon pain, vision change,
+  vomiting, vomiting blood, weight gain, worsening abdominal pain, wound drainage, wound redness
+
+red_flag.action, one of: emergency, call urgently, call
+
+restriction.activity, one of these, or "taking <drug>" for a named drug:
+  alcohol, bathing, driving, exercise, lifting, nsaids, sex, smoking, stairs, work, wound
+  wetting

@@ -1,0 +1,2438 @@
+{
+  "post-op-chole": {
+    "medications": [
+      {
+        "name": "cephalexin",
+        "dose": 500,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "four times daily",
+        "duration_days": 7,
+        "duration_note": "until finished",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "oxycodone",
+        "dose": 5,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 4 to 6 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "6 tablet",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "max_per_day is counted in tablets while dose is in mg, so the two numeric fields of one fact use incompatible units and cannot be reconciled without knowing tablet strength. Also 'PRN severe pain' - the indication that gates the PRN has no field."
+      },
+      {
+        "name": "acetaminophen",
+        "dose": 650,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 6 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "3000 mg",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "Indication 'mild pain' (vs oxycodone's 'severe pain') is lost; the two PRN analgesics become indistinguishable in indication."
+      },
+      {
+        "name": "docusate",
+        "dose": 100,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "'while taking opioids' is a real duration but matches none of the five duration_note values and is not a day count; it is dropped, so this reads as an indefinite standing order."
+      }
+    ],
+    "follow_ups": [
+      {
+        "who": "surgeon",
+        "within_days": 14
+      },
+      {
+        "who": "primary care",
+        "within_days": 7
+      }
+    ],
+    "red_flags": [
+      {
+        "symptom": "fever",
+        "action": "call urgently",
+        "threshold": "over 101 F"
+      },
+      {
+        "symptom": "advancing redness",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "wound drainage",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "dyspnea",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "chest pain",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "vomiting",
+        "action": "call urgently",
+        "threshold": ""
+      }
+    ],
+    "restrictions": [
+      {
+        "activity": "lifting",
+        "duration_days": 28,
+        "duration_note": "",
+        "limit": "10 pounds",
+        "condition": ""
+      },
+      {
+        "activity": "driving",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "while taking oxycodone",
+        "comment": "condition now holds 'while taking oxycodone', which in revision 1 was the entire content of this restriction and was dropped."
+      },
+      {
+        "activity": "bathing",
+        "duration_days": null,
+        "duration_note": "until staples out",
+        "limit": "",
+        "condition": "",
+        "comment": "Note says 'no submersion bathing'; the activity value cannot distinguish submersion from showering, which is why the adjacent 'showers are permitted' sentence has to go to unclassifiable."
+      },
+      {
+        "activity": "work",
+        "duration_days": 14,
+        "duration_note": "",
+        "limit": "",
+        "condition": "",
+        "comment": "Phrased as a resumption ('resume work as tolerated after 2 weeks'), not a prohibition; 'as tolerated' is lost."
+      }
+    ],
+    "unclassifiable": [
+      "Showers are permitted after 48 hours."
+    ]
+  },
+  "chf-exac": {
+    "medications": [
+      {
+        "name": "furosemide",
+        "dose": 40,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "'each morning' is timing information that 'once daily' erases; for a diuretic the morning timing is clinically meaningful."
+      },
+      {
+        "name": "metoprolol succinate",
+        "dose": 25,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "Salt form kept in the name because succinate (extended release) and tartrate (immediate release) are not interchangeable; the schema gives no guidance on whether salt forms belong in 'name'."
+      },
+      {
+        "name": "lisinopril",
+        "dose": 10,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "spironolactone",
+        "dose": 25,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "potassium chloride",
+        "dose": 20,
+        "dose_max": null,
+        "unit": "mEq",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "mEq is outside the canonical unit list. 'with food' has no field."
+      }
+    ],
+    "follow_ups": [
+      {
+        "who": "cardiology",
+        "within_days": 7
+      },
+      {
+        "who": "primary care",
+        "within_days": 14
+      },
+      {
+        "who": "lab",
+        "within_days": 5,
+        "comment": "A basic metabolic panel; 'lab' holds the role but the test name, which is the whole point of the visit, has no field."
+      }
+    ],
+    "red_flags": [
+      {
+        "symptom": "weight gain",
+        "action": "call urgently",
+        "threshold": "over 3 pounds",
+        "comment": "threshold='over 3 pounds' now carries direction and unit. Still absent: the 'in one day' window, and it is the RATE that makes 3 pounds a red flag."
+      },
+      {
+        "symptom": "dyspnea",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "orthopnea",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "swelling",
+        "action": "call urgently",
+        "threshold": "",
+        "comment": "Note specifies lower-extremity edema that is worsening; site and trajectory are both lost."
+      },
+      {
+        "symptom": "palpitations",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "fainting",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "chest pain",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "dyspnea",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "Second dyspnea fact in this note. 'Increasing dyspnea' gets 'call urgently' and 'severe shortness of breath at rest' gets 'emergency'. The only field distinguishing them is action; any dedupe on symptom would silently discard the 911 instruction. 'at rest' has nowhere to live."
+      }
+    ],
+    "restrictions": [
+      {
+        "activity": "nsaids",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "",
+        "comment": "Three named agents plus 'any other NSAID' collapse into one fact, which is correct per the convention but means the fact carries no record of which drugs were named."
+      }
+    ],
+    "unclassifiable": [
+      "Restrict sodium intake to under 2 grams daily.",
+      "Restrict fluid intake to 1.5 litres daily.",
+      "Weigh yourself each morning after voiding and record the value."
+    ]
+  },
+  "pneumonia": {
+    "medications": [
+      {
+        "name": "amoxicillin-clavulanate",
+        "dose": 875,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily",
+        "duration_days": 7,
+        "duration_note": "until finished",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "azithromycin",
+        "dose": 250,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": 4,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "'for 4 MORE days' continues an inpatient course; duration_days=4 cannot express that this is a remainder rather than a fresh 4-day course."
+      },
+      {
+        "name": "acetaminophen",
+        "dose": 650,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 6 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "No max_per_day stated here, unlike every other acetaminophen order in this corpus; the empty field is indistinguishable from an extraction miss."
+      },
+      {
+        "name": "albuterol",
+        "dose": 2,
+        "dose_max": null,
+        "unit": "puff",
+        "route": "inhaled",
+        "frequency": "every 4 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      }
+    ],
+    "follow_ups": [
+      {
+        "who": "primary care",
+        "within_days": 5
+      },
+      {
+        "who": "imaging",
+        "within_days": 42,
+        "comment": "'imaging' now exists. Still absent: the test identity (a repeat chest radiograph), and follow_up cannot mark this as a test rather than a clinician visit."
+      }
+    ],
+    "red_flags": [
+      {
+        "symptom": "dyspnea",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "'at rest' is the discriminator between this and ordinary exertional dyspnea and has no field."
+      },
+      {
+        "symptom": "fever",
+        "action": "emergency",
+        "threshold": "over 102 F"
+      },
+      {
+        "symptom": "confusion",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "somnolence",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "Note says 'lethargy'; mapped to somnolence as nearest canonical value."
+      },
+      {
+        "symptom": "coughing blood",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "chest pain",
+        "action": "emergency",
+        "threshold": ""
+      }
+    ],
+    "restrictions": [
+      {
+        "activity": "exercise",
+        "duration_days": 14,
+        "duration_note": "",
+        "limit": "",
+        "condition": ""
+      },
+      {
+        "activity": "smoking",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": ""
+      },
+      {
+        "activity": "work",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "until afebrile for 48 hours",
+        "comment": "condition now holds the physiologic trigger, so the instruction no longer evaporates. Note that this value is not one of the four examples in the revision-2 guide and the guide does not say whether condition is a closed vocabulary or free text; read as free text."
+      }
+    ],
+    "unclassifiable": [
+      "Use the incentive spirometer 10 times every hour while awake.",
+      "Maintain hydration."
+    ]
+  },
+  "afib-warfarin": {
+    "medications": [
+      {
+        "name": "warfarin",
+        "dose": 5,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "at bedtime",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "'Your dose will be titrated according to INR' means 5 mg is provisional. The schema has no way to flag a dose as temporary, so this reads as a fixed standing dose - a clinically dangerous flattening for warfarin."
+      },
+      {
+        "name": "metoprolol tartrate",
+        "dose": 25,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "pantoprazole",
+        "dose": 40,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      }
+    ],
+    "follow_ups": [
+      {
+        "who": "anticoagulation clinic",
+        "within_days": 3,
+        "comment": "Phrased as the clinic contacting the patient, not the patient booking; follow_up has no field for who initiates."
+      },
+      {
+        "who": "cardiology",
+        "within_days": 14
+      },
+      {
+        "who": "primary care",
+        "within_days": 28
+      }
+    ],
+    "red_flags": [
+      {
+        "symptom": "bleeding",
+        "action": "emergency",
+        "threshold": "over 10 minutes",
+        "comment": "threshold='over 10 minutes' now carries its unit, so it is no longer confusable with a temperature or a weight. Action changed to 'emergency' under the revision-2 reading of 'seek immediate medical attention'."
+      },
+      {
+        "symptom": "blood in urine",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "rectal bleeding",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "black stool",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "headache",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "Note says 'a severe headache'. The list offers 'headache' and separately 'severe pain', and neither encodes severity-of-headache; the qualifier is dropped."
+      },
+      {
+        "symptom": "head injury",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "'however minor' is the operative instruction (report even trivial injuries on warfarin) and has no field."
+      },
+      {
+        "symptom": "weakness or numbness",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "Renamed symptom. The rename fixes concussion, where the note states no laterality, but it costs information HERE: this note does say 'on one side' and the new value cannot record it. Revision 2 traded a false assertion for a lost one."
+      },
+      {
+        "symptom": "fainting",
+        "action": "emergency",
+        "threshold": ""
+      }
+    ],
+    "restrictions": [
+      {
+        "activity": "nsaids",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "",
+        "comment": "aspirin, ibuprofen and naproxen all fold into one 'nsaids' fact."
+      },
+      {
+        "activity": "alcohol",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": ""
+      }
+    ],
+    "unclassifiable": [
+      "Maintain a consistent intake of vitamin K containing foods; do not abruptly increase or decrease leafy green vegetables.",
+      "Use an electric razor and a soft toothbrush.",
+      "Call the anticoagulation clinic for any missed warfarin dose.",
+      "Do not double a warfarin dose to compensate for a missed one."
+    ]
+  },
+  "appendectomy": {
+    "medications": [
+      {
+        "name": "ibuprofen",
+        "dose": 400,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 6 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "Ibuprofen is a PRESCRIBED drug here while in five other notes the identical token is a prohibition mapped to restriction.activity='nsaids'. Nothing in the value space prevents the same string meaning 'take this' and 'never take this'."
+      },
+      {
+        "name": "acetaminophen",
+        "dose": 1000,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 8 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "3000 mg",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "oxycodone",
+        "dose": 5,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 6 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "4 tablet",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "'breakthrough pain only' makes this third-line behind the other two analgesics; the schema records no ordering or escalation between medications."
+      },
+      {
+        "name": "docusate",
+        "dose": 100,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "polyethylene glycol",
+        "dose": 17,
+        "dose_max": null,
+        "unit": "g",
+        "route": "oral",
+        "frequency": "once daily as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      }
+    ],
+    "follow_ups": [
+      {
+        "who": "surgeon",
+        "within_days": 14
+      }
+    ],
+    "red_flags": [
+      {
+        "symptom": "fever",
+        "action": "call urgently",
+        "threshold": "over 100.4 F"
+      },
+      {
+        "symptom": "wound redness",
+        "action": "call urgently",
+        "threshold": "",
+        "comment": "'port site' (laparoscopic, i.e. several small incisions) is still lost. Induration is now its own fact."
+      },
+      {
+        "symptom": "induration",
+        "action": "call urgently",
+        "threshold": "",
+        "comment": "Split out from the erythema/induration clause now that 'induration' is a canonical symptom. In revision 1 a distinct physical finding was folded into wound redness."
+      },
+      {
+        "symptom": "wound drainage",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "worsening abdominal pain",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "vomiting",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "severe pain",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "Note says 'severe abdominal pain with rigidity'. 'severe pain' drops the body site; the adjacent canonical value 'worsening abdominal pain' keeps the site but drops the severity. No single value holds both."
+      },
+      {
+        "symptom": "abdominal rigidity",
+        "action": "emergency",
+        "threshold": ""
+      }
+    ],
+    "restrictions": [
+      {
+        "activity": "wound wetting",
+        "duration_days": 2,
+        "duration_note": "",
+        "limit": "",
+        "condition": "",
+        "comment": "From 'keep the dressing dry for 48 hours'. The instruction is about the dressing, not the wound; the activity value cannot tell them apart."
+      },
+      {
+        "activity": "bathing",
+        "duration_days": null,
+        "duration_note": "until healed",
+        "limit": "",
+        "condition": "",
+        "comment": "'Do not get the incision wet in a bath or pool until the wound is fully healed' is simultaneously a bathing restriction and a wound-wetting restriction. Choosing one value discards the other reading, and it collides with the 48-hour dressing fact above."
+      },
+      {
+        "activity": "lifting",
+        "duration_days": 21,
+        "duration_note": "",
+        "limit": "15 pounds",
+        "condition": ""
+      },
+      {
+        "activity": "exercise",
+        "duration_days": 28,
+        "duration_note": "",
+        "limit": "",
+        "condition": ""
+      },
+      {
+        "activity": "driving",
+        "duration_days": 5,
+        "duration_note": "",
+        "limit": "",
+        "condition": "while taking oxycodone",
+        "comment": "Both constraints now fit: 5 days in duration_days and the open-ended drug clause in condition. The 'not at all' emphasis (the drug clause overrides the 5 days) is still unrecorded, but the dangerous reading - cleared to drive on day 6 while on oxycodone - is gone."
+      }
+    ],
+    "unclassifiable": [
+      "Remove the dressing after 48 hours.",
+      "Do not peel off the adhesive strips; they will separate on their own.",
+      "Ambulate several times daily beginning today."
+    ]
+  },
+  "cabg": {
+    "medications": [
+      {
+        "name": "aspirin",
+        "dose": 81,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "'indefinitely' is an explicit duration but has no duration_note value, so it becomes null - identical to a drug whose duration was simply never stated. Also: aspirin is prescribed here and prohibited (as 'nsaids') in three other notes."
+      },
+      {
+        "name": "metoprolol tartrate",
+        "dose": 25,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "atorvastatin",
+        "dose": 80,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "at bedtime",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "lisinopril",
+        "dose": 5,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "furosemide",
+        "dose": 20,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": 7,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "stop",
+        "comment": "then_duration_note='stop' now records 'then stop', which matters for a time-limited diuretic."
+      },
+      {
+        "name": "potassium chloride",
+        "dose": 20,
+        "dose_max": null,
+        "unit": "mEq",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": 7,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "mEq is outside the canonical unit list."
+      },
+      {
+        "name": "acetaminophen",
+        "dose": 1000,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 8 hours",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "'scheduled' is explicitly NOT PRN. The only way the schema records this is by absence of the ' as needed' suffix, so a scheduled order and an order whose PRN status was missed look identical."
+      },
+      {
+        "name": "oxycodone",
+        "dose": 5,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 6 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "4 tablet",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "docusate",
+        "dose": 100,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      }
+    ],
+    "follow_ups": [
+      {
+        "who": "cardiac surgery",
+        "within_days": 14,
+        "comment": "Resolved by revision 2: the specialty is no longer flattened to 'surgeon', which mattered because this note also sends the patient to cardiology."
+      },
+      {
+        "who": "cardiology",
+        "within_days": 28
+      },
+      {
+        "who": "primary care",
+        "within_days": 21
+      },
+      {
+        "who": "cardiac rehabilitation",
+        "within_days": 28,
+        "comment": "Resolved by revision 2: no longer mis-mapped to physical therapy, and no longer colliding with the cardiology visit at the same 28 days."
+      }
+    ],
+    "red_flags": [
+      {
+        "symptom": "fever",
+        "action": "call urgently",
+        "threshold": "over 101 F"
+      },
+      {
+        "symptom": "sternal instability",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "wound redness",
+        "action": "call urgently",
+        "threshold": "",
+        "comment": "'from either incision' (sternal vs leg harvest site) is still lost. Induration is now its own fact."
+      },
+      {
+        "symptom": "induration",
+        "action": "call urgently",
+        "threshold": "",
+        "comment": "Split out from the erythema/induration clause now that 'induration' is a canonical symptom. In revision 1 a distinct physical finding was folded into wound redness."
+      },
+      {
+        "symptom": "wound drainage",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "weight gain",
+        "action": "call urgently",
+        "threshold": "over 3 pounds",
+        "comment": "threshold now carries direction and unit; the 'in one day' window is still absent."
+      },
+      {
+        "symptom": "palpitations",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "dyspnea",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "swelling",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "chest pain",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "dyspnea",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "Second dyspnea fact. 'Increasing dyspnea' -> call urgently; 'SEVERE DYSPNEA' -> 911. Only the action field separates them."
+      },
+      {
+        "symptom": "fainting",
+        "action": "emergency",
+        "threshold": ""
+      }
+    ],
+    "restrictions": [
+      {
+        "activity": "lifting",
+        "duration_days": 56,
+        "duration_note": "",
+        "limit": "10 pounds",
+        "condition": "",
+        "comment": "The 8-week duration lives only in the SECTION HEADER ('STERNAL PRECAUTIONS - OBSERVE FOR 8 WEEKS'), not in the sentence. 'pushing, or pulling' now has a candidate activity ('reaching or pushing'), but the 10-pound limit attaches to all three verbs in one sentence and splitting would duplicate it, so this stays a single lifting fact."
+      },
+      {
+        "activity": "driving",
+        "duration_days": 42,
+        "duration_note": "",
+        "limit": "",
+        "condition": "",
+        "comment": "6 weeks, which contradicts the 8-week header governing the rest of the section; the schema cannot express that one item in a section has its own duration except by stating it, which is fine, but it means a header-inheriting extractor will get this wrong."
+      },
+      {
+        "activity": "bathing",
+        "duration_days": null,
+        "duration_note": "until cleared",
+        "limit": "",
+        "condition": ""
+      },
+      {
+        "activity": "reaching or pushing",
+        "duration_days": 56,
+        "duration_note": "",
+        "limit": "",
+        "condition": "",
+        "comment": "MERGED from two distinct sentences - 'Do not push up from a chair with your arms. Use your legs.' and 'Do not reach behind your back or above your head.' Both yield an identical fact, the same collapse as concussion's two exercise sentences. The substitute technique ('use your legs') has no field. Duration inherited from the 8-week section header."
+      },
+      {
+        "activity": "ointment on the wound",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "",
+        "comment": "From 'Do not apply lotion or powder to the sternal incision or the leg incision.' Lotion and powder are not ointment, so the new activity name is the intended slot but a loose fit; 'either incision' is also lost."
+      }
+    ],
+    "unclassifiable": [
+      "Do not stop the aspirin without speaking to your surgeon.",
+      "Shower daily.",
+      "Wear the compression stocking on the harvest leg during the day and remove it at night.",
+      "Walk daily, increasing by 5 minutes each day as tolerated.",
+      "Elevate the harvest leg when seated."
+    ]
+  },
+  "cellulitis": {
+    "medications": [
+      {
+        "name": "cephalexin",
+        "dose": 500,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "four times daily",
+        "duration_days": 10,
+        "duration_note": "until finished",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "acetaminophen",
+        "dose": 650,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 6 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      }
+    ],
+    "follow_ups": [
+      {
+        "who": "primary care",
+        "within_days": 2
+      },
+      {
+        "who": "wound care",
+        "within_days": null,
+        "comment": "A CONDITIONAL referral ('has been placed IF the skin breaks down'). within_days=null makes it indistinguishable from an urgent follow-up with an unstated date; the schema has no field for the triggering condition, so a contingent appointment reads as a definite one."
+      }
+    ],
+    "red_flags": [
+      {
+        "symptom": "advancing redness",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "fever",
+        "action": "emergency",
+        "threshold": "over 101 F"
+      },
+      {
+        "symptom": "wound drainage",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "Note says 'purulent drainage OR a fluctuant area'. A fluctuant area is an abscess, a different finding with different management; revision 2's new 'induration' value does not cover fluctuance, so this fold remains."
+      },
+      {
+        "symptom": "severe pain",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "'pain out of proportion to the appearance' is the classic necrotising-fasciitis flag; 'severe pain' loses the pain/appearance mismatch that gives it its meaning."
+      },
+      {
+        "symptom": "crepitus",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "skin necrosis",
+        "action": "emergency",
+        "threshold": ""
+      }
+    ],
+    "restrictions": [
+      {
+        "activity": "bathing",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "",
+        "comment": "From 'do not soak the leg'. Equally readable as 'wound wetting'; the two activity values overlap with no rule for choosing."
+      },
+      {
+        "activity": "ointment on the wound",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "",
+        "comment": "Revision 2 resolves the round-1 awkwardness here: this was neither a canonical activity nor a named drug for the 'taking <drug>' convention, so it sat in unclassifiable."
+      }
+    ],
+    "unclassifiable": [
+      "Elevate the extremity above the level of your heart whenever you are seated or lying down.",
+      "Do not wash off the pen mark drawn around the border of the erythema."
+    ]
+  },
+  "concussion": {
+    "medications": [
+      {
+        "name": "acetaminophen",
+        "dose": 650,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 6 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "3000 mg",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "ondansetron",
+        "dose": 4,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 8 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      }
+    ],
+    "follow_ups": [
+      {
+        "who": "primary care",
+        "within_days": 3
+      },
+      {
+        "who": "neurology",
+        "within_days": 14,
+        "comment": "Conditional ('in 2 weeks IF symptoms persist'). The schema records a definite neurology appointment where the note describes a contingent one."
+      }
+    ],
+    "red_flags": [
+      {
+        "symptom": "headache",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "'severe or progressively worsening' - both qualifiers dropped. A plain 'headache' red flag is near-useless in a concussion note where headache is the expected symptom."
+      },
+      {
+        "symptom": "vomiting",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "seizure",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "confusion",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "somnolence",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "From 'difficulty rousing', which is more severe than somnolence."
+      },
+      {
+        "symptom": "vision change",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "Covers diplopia. 'Unequal pupils' is an objective sign, not a vision change, and has no canonical value; it is lost entirely."
+      },
+      {
+        "symptom": "slurred speech",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "weakness or numbness",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "Resolved by revision 2: the value no longer asserts a laterality the note does not state."
+      },
+      {
+        "symptom": "fluid from ears or nose",
+        "action": "emergency",
+        "threshold": ""
+      }
+    ],
+    "restrictions": [
+      {
+        "activity": "nsaids",
+        "duration_days": 3,
+        "duration_note": "",
+        "limit": "",
+        "condition": ""
+      },
+      {
+        "activity": "exercise",
+        "duration_days": null,
+        "duration_note": "until cleared",
+        "limit": "",
+        "condition": "",
+        "comment": "MERGED from two distinct sentences - 'No return to sport, contact activity, or any activity with a fall risk until cleared by a physician' and 'No strenuous exercise until cleared'. Both produce an identical fact, so the value space cannot represent them as two instructions. Fall-risk activity and contact sport are also quite different from strenuous exercise."
+      },
+      {
+        "activity": "driving",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "until symptom free",
+        "comment": "condition covers half the note's condition. 'and off all sedating medication' is still lost: condition is single-valued and the note states two independent conditions."
+      },
+      {
+        "activity": "alcohol",
+        "duration_days": 14,
+        "duration_note": "",
+        "limit": "",
+        "condition": ""
+      },
+      {
+        "activity": "screens",
+        "duration_days": 1,
+        "duration_note": "",
+        "limit": "",
+        "condition": "",
+        "comment": "'No screens for 24 hours, THEN limit screen exposure as tolerated.' This is a PHASED RESTRICTION. Revision 2 gave medication then_* fields but not restriction, so the second phase is still lost - the same cardinality bug, fixed on one family only."
+      }
+    ],
+    "unclassifiable": [
+      "Relative rest for 48 hours, then graded return to activity as symptoms permit.",
+      "You may sleep normally; you do not need to be woken hourly.",
+      "A responsible adult should remain with you for the first 24 hours."
+    ]
+  },
+  "copd-exac": {
+    "medications": [
+      {
+        "name": "prednisone",
+        "dose": 40,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": 5,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "stop",
+        "comment": "then_duration_note='stop' now records 'then stop'. 'Do not taper' is a separate directive about HOW to stop and still has no field; it stays in unclassifiable."
+      },
+      {
+        "name": "doxycycline",
+        "dose": 100,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily",
+        "duration_days": 5,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "albuterol",
+        "dose": 2,
+        "dose_max": null,
+        "unit": "puff",
+        "route": "inhaled",
+        "frequency": "every 4 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "This is the rescue inhaler referenced in two red flags ('despite rescue inhaler use', 'does not improve with the rescue inhaler'). Nothing links the medication fact to the red flags that depend on it."
+      },
+      {
+        "name": "fluticasone-salmeterol",
+        "dose": 1,
+        "dose_max": null,
+        "unit": "puff",
+        "route": "inhaled",
+        "frequency": "twice daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "Maintenance inhaler; nothing in the fact distinguishes it from the rescue inhaler above, which is the single most common patient error with this pair."
+      },
+      {
+        "name": "pantoprazole",
+        "dose": 40,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "'while on prednisone' is a precise 5-day duration derivable from another fact, but duration_note has no value for drug-linked durations and duration_days would be an inference, so it is dropped."
+      },
+      {
+        "name": "oxygen",
+        "dose": 2,
+        "dose_max": null,
+        "unit": "L/min",
+        "route": "inhaled",
+        "frequency": "",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "SCHEMA FAILURE. Home oxygen is a prescribed therapy with a dose, but: (1) the dose is a FLOW RATE and there is no canonical unit for L/min - 'L/min' here is non-canonical and will never match; (2) 'continuous' is not in the frequency list, so frequency is empty; (3) 'by nasal cannula' is a delivery device, and 'inhaled' vs 'nasal' are both wrong in different ways. Three of the eight medication fields cannot be filled legally."
+      }
+    ],
+    "follow_ups": [
+      {
+        "who": "pulmonology",
+        "within_days": 10
+      },
+      {
+        "who": "primary care",
+        "within_days": 5
+      },
+      {
+        "who": "pulmonary rehabilitation",
+        "within_days": 14,
+        "comment": "'pulmonary rehabilitation' now exists, so the clinically wrong PT mapping is gone. Still phrased as a passive referral ('the programme will contact you'), which follow_up cannot distinguish from a booked visit."
+      }
+    ],
+    "red_flags": [
+      {
+        "symptom": "dyspnea",
+        "action": "call urgently",
+        "threshold": "",
+        "comment": "'despite rescue inhaler use' is the discriminator and is lost; plain dyspnea is the patient's baseline in COPD."
+      },
+      {
+        "symptom": "sputum change",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "fever",
+        "action": "call urgently",
+        "threshold": "over 100.8 F"
+      },
+      {
+        "symptom": "swelling",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "somnolence",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "confusion",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "dyspnea",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "Second dyspnea fact. 'at rest that does not improve with the rescue inhaler' -> 911, vs 'increasing' -> call urgently. The two are separated only by action."
+      }
+    ],
+    "restrictions": [
+      {
+        "activity": "smoking",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "",
+        "comment": "The second half, 'do not permit smoking near the oxygen concentrator', is a restriction on OTHER PEOPLE and a fire-safety instruction, not a patient behaviour; it is folded into a personal smoking ban."
+      }
+    ],
+    "unclassifiable": [
+      "Do not taper the prednisone.",
+      "Rinse your mouth after each use of the fluticasone-salmeterol inhaler.",
+      "Perform deep breathing exercises every hour while awake."
+    ]
+  },
+  "csection": {
+    "medications": [
+      {
+        "name": "ibuprofen",
+        "dose": 600,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 6 hours",
+        "duration_days": 3,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": 600,
+        "then_frequency": "every 6 hours as needed",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "Revision 2 holds both phases: scheduled every 6 hours for 3 days (72 hours), then the same dose as needed. The PRN phase is open-ended so then_duration_days is null."
+      },
+      {
+        "name": "acetaminophen",
+        "dose": 1000,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 8 hours",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "3000 mg",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "oxycodone",
+        "dose": 5,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 6 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "3 tablet",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "'compatible with breastfeeding' is clinically load-bearing reassurance for this patient and has no field anywhere in the schema."
+      },
+      {
+        "name": "docusate",
+        "dose": 100,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "ferrous sulfate",
+        "dose": 325,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "'with vitamin C' is a co-administration instruction that materially affects absorption and has no field; it is also arguably a second medication with no dose."
+      },
+      {
+        "name": "prenatal vitamin",
+        "dose": 1,
+        "dose_max": null,
+        "unit": "tablet",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "'prenatal vitamin' is a product class, not a lowercase generic name; the schema's name field has no notion of non-generic products. 'Continue while breastfeeding' is an open-ended duration with no representable value."
+      }
+    ],
+    "follow_ups": [
+      {
+        "who": "obstetrics",
+        "within_days": 14
+      },
+      {
+        "who": "obstetrics",
+        "within_days": 42,
+        "comment": "Second obstetrics follow-up (the 6-week postpartum visit, a different appointment from the 2-week incision check). Two facts with the same 'who' and different within_days look like a duplicate to any dedupe keyed on role; the schema has no field for the visit's purpose."
+      },
+      {
+        "who": "lactation",
+        "within_days": 3,
+        "comment": "Resolved by revision 2."
+      }
+    ],
+    "red_flags": [
+      {
+        "symptom": "fever",
+        "action": "call urgently",
+        "threshold": "over 100.4 F"
+      },
+      {
+        "symptom": "bleeding",
+        "action": "call urgently",
+        "threshold": "over 1 pads",
+        "comment": "threshold='over 1 pads' follows the guide's own example and now carries direction and unit, though 'pads' is not a measure and the 'per hour' rate is still absent. 'Clots larger than a golf ball' still has no numeric form and remains folded into this fact."
+      },
+      {
+        "symptom": "wound redness",
+        "action": "call urgently",
+        "threshold": "",
+        "comment": "Induration is now its own fact; no residual loss in this clause."
+      },
+      {
+        "symptom": "induration",
+        "action": "call urgently",
+        "threshold": "",
+        "comment": "Split out from the erythema/induration clause now that 'induration' is a canonical symptom. In revision 1 a distinct physical finding was folded into wound redness."
+      },
+      {
+        "symptom": "wound drainage",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "calf pain",
+        "action": "call urgently",
+        "threshold": "",
+        "comment": "'Unilateral' is dropped, and unilaterality is what makes this a DVT flag rather than ordinary postpartum leg ache."
+      },
+      {
+        "symptom": "swelling",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "headache",
+        "action": "call urgently",
+        "threshold": "",
+        "comment": "'Severe headache WITH visual change' is one conjoint preeclampsia criterion. Splitting it into separate headache and vision-change facts turns an AND into two ORs, lowering the threshold for each."
+      },
+      {
+        "symptom": "vision change",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "worsening abdominal pain",
+        "action": "call urgently",
+        "threshold": "",
+        "comment": "The note says EPIGASTRIC pain, a specific preeclampsia/HELLP sign. 'worsening abdominal pain' is the nearest canonical value and it is both anatomically wrong and adds a 'worsening' trajectory the note never states. There is no canonical value for epigastric pain."
+      },
+      {
+        "symptom": "hopelessness",
+        "action": "call urgently",
+        "threshold": "",
+        "comment": "WORST COMPRESSION IN THE CORPUS. The note says 'feelings of hopelessness OR THOUGHTS OF HARMING YOURSELF OR THE BABY. Call at any hour.' There is no canonical symptom for suicidal or infanticidal ideation, so the highest-acuity item in all 15 notes is recorded as 'hopelessness / call urgently' - and 'call at any hour' has no representation in the three-level action scale."
+      }
+    ],
+    "restrictions": [
+      {
+        "activity": "bathing",
+        "duration_days": null,
+        "duration_note": "until follow-up",
+        "limit": "",
+        "condition": "",
+        "comment": "'until your postpartum visit' - the 6-week date is known from a follow_up fact in the same note, but nothing links the two, so an unresolvable 'until follow-up' replaces a concrete 42 days."
+      },
+      {
+        "activity": "lifting",
+        "duration_days": 42,
+        "duration_note": "",
+        "limit": "your baby",
+        "condition": "",
+        "comment": "The limit is a non-numeric referent ('anything heavier than your baby'). A pounds-parsing extractor gets nothing; a string match gets an un-normalisable value. Both readings are defensible and neither is comparable to '10 pounds'."
+      },
+      {
+        "activity": "driving",
+        "duration_days": 14,
+        "duration_note": "",
+        "limit": "",
+        "condition": "while taking oxycodone",
+        "comment": "condition now holds the oxycodone clause alongside the 14-day figure."
+      },
+      {
+        "activity": "sex",
+        "duration_days": null,
+        "duration_note": "until cleared",
+        "limit": "",
+        "condition": "",
+        "comment": "'until cleared AT YOUR POSTPARTUM VISIT' satisfies two duration_note values at once ('until cleared' and 'until follow-up'); the enum forces a choice and 'until follow-up' is equally defensible."
+      },
+      {
+        "activity": "exercise",
+        "duration_days": 42,
+        "duration_note": "",
+        "limit": "",
+        "condition": ""
+      }
+    ],
+    "unclassifiable": [
+      "Keep the incision clean and dry, patting it dry after showering.",
+      "Support the incision with a pillow when coughing.",
+      "Rest when the baby rests."
+    ]
+  },
+  "dka": {
+    "medications": [
+      {
+        "name": "insulin glargine",
+        "dose": 18,
+        "dose_max": null,
+        "unit": "unit",
+        "route": "subcutaneous",
+        "frequency": "at bedtime",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "'must be taken every night EVEN IF YOU ARE NOT EATING' is the single instruction that prevents recurrent DKA. The schema has no field for a do-not-hold rule, so this basal order looks exactly like the bolus order below, which must be held when meals are skipped. The two have opposite hold rules and identical representations."
+      },
+      {
+        "name": "insulin lispro",
+        "dose": 6,
+        "dose_max": null,
+        "unit": "unit",
+        "route": "subcutaneous",
+        "frequency": "three times daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "'with meals' is meal-anchored, not clock-anchored, and 'three times daily' erases that. The conditional hold ('omit the dose if you skip the meal') has no field."
+      },
+      {
+        "name": "metformin",
+        "dose": 500,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "'with food' has no field."
+      },
+      {
+        "name": "lisinopril",
+        "dose": 5,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      }
+    ],
+    "follow_ups": [
+      {
+        "who": "endocrinology",
+        "within_days": 7,
+        "comment": "Resolved by revision 2: 'endocrinology' now exists, so the most important appointment in the note keeps its specialty."
+      },
+      {
+        "who": "diabetes education",
+        "within_days": 3,
+        "comment": "Resolved by revision 2; this also no longer collides with the endocrinology appointment."
+      },
+      {
+        "who": "primary care",
+        "within_days": 14
+      },
+      {
+        "who": "lab",
+        "within_days": 90,
+        "comment": "HbA1c; the test identity has no field."
+      }
+    ],
+    "red_flags": [
+      {
+        "symptom": "vomiting",
+        "action": "call urgently",
+        "threshold": "",
+        "comment": "'persistent' dropped."
+      },
+      {
+        "symptom": "high blood sugar",
+        "action": "call urgently",
+        "threshold": "over 300 mg/dL",
+        "comment": "threshold now carries direction and unit. Still absent: 'on two consecutive checks', which is the whole criterion."
+      },
+      {
+        "symptom": "ketones",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "low blood sugar",
+        "action": "call urgently",
+        "threshold": "below 70 mg/dL",
+        "comment": "threshold='below 70 mg/dL' records the floor explicitly, so the floor/ceiling inversion against 'over 300 mg/dL' is resolved. Still absent: 'that does not correct with oral carbohydrate', so this still reads as 'call for any glucose under 70'."
+      },
+      {
+        "symptom": "confusion",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "somnolence",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "From 'lethargy'."
+      }
+    ],
+    "restrictions": [],
+    "unclassifiable": [
+      "Omit the insulin lispro dose if you skip the meal.",
+      "Check capillary blood glucose four times a day: before each meal and at bedtime.",
+      "Check urine ketones if blood glucose exceeds 250 mg/dL.",
+      "Record all glucose values and bring the log to every appointment.",
+      "Do not omit basal insulin when you are unwell, even if you are not eating.",
+      "Maintain hydration with sugar-free fluids.",
+      "Check glucose every 4 hours while unwell."
+    ]
+  },
+  "gi-bleed": {
+    "medications": [
+      {
+        "name": "pantoprazole",
+        "dose": 40,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily",
+        "duration_days": 56,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": 40,
+        "then_frequency": "once daily",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "Revision 2 holds the step-down: 40 mg twice daily for 8 weeks, then 40 mg once daily. then_duration_days is null because the maintenance phase is genuinely open-ended, which is correct here but indistinguishable from a second phase whose duration was missed."
+      },
+      {
+        "name": "amoxicillin",
+        "dose": 1000,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily",
+        "duration_days": 14,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "Part of a three-drug H. pylori eradication regimen that must be taken together; the schema records three unrelated drugs with no grouping."
+      },
+      {
+        "name": "clarithromycin",
+        "dose": 500,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily",
+        "duration_days": 14,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "ondansetron",
+        "dose": 4,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 8 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "ferrous sulfate",
+        "dose": 325,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "once daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      }
+    ],
+    "follow_ups": [
+      {
+        "who": "gastroenterology",
+        "within_days": 21
+      },
+      {
+        "who": "primary care",
+        "within_days": 7
+      },
+      {
+        "who": "lab",
+        "within_days": 7
+      },
+      {
+        "who": "gastroenterology",
+        "within_days": 56,
+        "comment": "REPEAT ENDOSCOPY - a procedure, not a clinic visit, and the only available role duplicates the 3-week GI appointment above. The schema cannot distinguish 'see the gastroenterologist' from 'have a scope'."
+      }
+    ],
+    "red_flags": [
+      {
+        "symptom": "vomiting blood",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "'vomit that looks like coffee grounds' is a distinct, lower-acuity presentation than frank haematemesis; both fold into one value."
+      },
+      {
+        "symptom": "black stool",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "rectal bleeding",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "fainting",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "palpitations",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "dyspnea",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "'on exertion THAT IS NEW' - both qualifiers lost; new exertional dyspnea here signals ongoing blood loss."
+      }
+    ],
+    "restrictions": [
+      {
+        "activity": "nsaids",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "",
+        "comment": "This is the single most important instruction in the note (an NSAID caused the bleed) and it is represented identically to the incidental NSAID advice in chf-exac. There is no severity or emphasis field."
+      },
+      {
+        "activity": "alcohol",
+        "duration_days": 56,
+        "duration_note": "",
+        "limit": "",
+        "condition": ""
+      },
+      {
+        "activity": "smoking",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "",
+        "comment": "Note says 'avoid tobacco entirely'; 'smoking' narrows tobacco to one route of use."
+      }
+    ],
+    "unclassifiable": [
+      "Resume a regular diet as tolerated.",
+      "Avoid foods that reproducibly cause dyspepsia."
+    ]
+  },
+  "pe-doac": {
+    "medications": [
+      {
+        "name": "apixaban",
+        "dose": 10,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily",
+        "duration_days": 7,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": 5,
+        "then_frequency": "twice daily",
+        "then_duration_days": 180,
+        "then_duration_note": "",
+        "comment": "Revision 2 holds the whole regimen: 10 mg twice daily for 7 days, then 5 mg twice daily for 180 days. The round-1 failure (gold said to stop a blood thinner on day 7 after a pulmonary embolism) is gone. Residual: the note says 'at LEAST 6 months', so then_duration_days=180 records a fixed endpoint where the note sets a floor."
+      },
+      {
+        "name": "acetaminophen",
+        "dose": 650,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 6 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      }
+    ],
+    "follow_ups": [
+      {
+        "who": "anticoagulation clinic",
+        "within_days": 7
+      },
+      {
+        "who": "pulmonology",
+        "within_days": 28
+      },
+      {
+        "who": "hematology",
+        "within_days": 42,
+        "comment": "Resolved by revision 2. The note spells it 'haematology'; the canonical value is the American spelling."
+      }
+    ],
+    "red_flags": [
+      {
+        "symptom": "dyspnea",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "chest pain",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "fainting",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "coughing blood",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "bleeding",
+        "action": "emergency",
+        "threshold": "over 15 minutes",
+        "comment": "threshold='over 15 minutes' now carries its unit."
+      },
+      {
+        "symptom": "head injury",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "bruising",
+        "action": "call",
+        "threshold": ""
+      },
+      {
+        "symptom": "bleeding gums",
+        "action": "call",
+        "threshold": ""
+      },
+      {
+        "symptom": "blood in urine",
+        "action": "call",
+        "threshold": ""
+      },
+      {
+        "symptom": "black stool",
+        "action": "call",
+        "threshold": ""
+      }
+    ],
+    "restrictions": [
+      {
+        "activity": "nsaids",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": ""
+      },
+      {
+        "activity": "exercise",
+        "duration_days": 14,
+        "duration_note": "",
+        "limit": "",
+        "condition": ""
+      },
+      {
+        "activity": "air travel",
+        "duration_days": 14,
+        "duration_note": "",
+        "limit": "",
+        "condition": ""
+      },
+      {
+        "activity": "prolonged immobility",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "",
+        "comment": "From 'Avoid prolonged immobility.' The remedy in the next sentence ('on any journey over 2 hours, stand and walk every hour') is a positive action, not a restriction, and stays in unclassifiable."
+      }
+    ],
+    "unclassifiable": [
+      "Do not miss an apixaban dose. If you miss one, take it as soon as you remember on the same day, then resume the normal schedule, and do not double a dose.",
+      "Do not stop the apixaban for any reason without speaking to the prescriber, including before dental work.",
+      "Ambulate as tolerated; mobility reduces the risk of further clot.",
+      "On any journey over 2 hours, stand and walk every hour."
+    ]
+  },
+  "pyelonephritis": {
+    "medications": [
+      {
+        "name": "ciprofloxacin",
+        "dose": 500,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily",
+        "duration_days": 10,
+        "duration_note": "until finished",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "acetaminophen",
+        "dose": 650,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 6 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "ondansetron",
+        "dose": 4,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 8 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      }
+    ],
+    "follow_ups": [
+      {
+        "who": "primary care",
+        "within_days": 4
+      },
+      {
+        "who": "lab",
+        "within_days": 14,
+        "comment": "Repeat urine culture. 'lab' is the least-bad role but the test identity, which is the entire content, has no field."
+      },
+      {
+        "who": "imaging",
+        "within_days": null,
+        "comment": "'imaging' now exists. within_days stays null because the note gives no interval at all ('the imaging department will call you')."
+      }
+    ],
+    "red_flags": [
+      {
+        "symptom": "tendon pain",
+        "action": "call urgently",
+        "threshold": "",
+        "comment": "The instruction is 'report any tendon pain immediately AND DISCONTINUE THE DRUG'. The action enum has only emergency / call urgently / call - there is no 'stop the medication' action, so half of a two-part fluoroquinolone safety instruction has to be exiled to unclassifiable."
+      },
+      {
+        "symptom": "fever",
+        "action": "emergency",
+        "threshold": "over 101 F",
+        "comment": "threshold now carries direction and unit. Still absent: 'after 48 hours of antibiotics', so the fact still sends a patient to the ED for a fever expected at discharge."
+      },
+      {
+        "symptom": "vomiting",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "worsening abdominal pain",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "The note says FLANK pain. Flank pain is not abdominal pain; the nearest canonical value is anatomically wrong and there is no flank/back pain value."
+      },
+      {
+        "symptom": "hypotension",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "Split out now that 'hypotension' is a canonical symptom. In revision 1 an objective vital sign had to be folded into a symptom of fainting."
+      },
+      {
+        "symptom": "fainting",
+        "action": "emergency",
+        "threshold": "",
+        "comment": "From 'near-syncope'. Hypotension is now a separate fact."
+      },
+      {
+        "symptom": "low urine output",
+        "action": "emergency",
+        "threshold": ""
+      }
+    ],
+    "restrictions": [
+      {
+        "activity": "taking antacids",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "within 2 hours of a ciprofloxacin dose",
+        "comment": "condition now holds the separation-in-time rule, so the fact reads 'not within 2 hours of a dose' instead of a flat ban; limit is cleared because this was never a quantity. Residual: one sentence still becomes three facts because activity is single-valued. 'antacids' is also a drug class, not a named generic."
+      },
+      {
+        "activity": "taking calcium",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "within 2 hours of a ciprofloxacin dose",
+        "comment": "condition now holds the separation-in-time rule, so the fact reads 'not within 2 hours of a dose' instead of a flat ban; limit is cleared because this was never a quantity. Residual: one sentence still becomes three facts because activity is single-valued. 'calcium' is a mineral supplement, not a named generic."
+      },
+      {
+        "activity": "taking iron",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "within 2 hours of a ciprofloxacin dose",
+        "comment": "condition now holds the separation-in-time rule, so the fact reads 'not within 2 hours of a dose' instead of a flat ban; limit is cleared because this was never a quantity. Residual: one sentence still becomes three facts because activity is single-valued. 'iron' is prescribed as ferrous sulfate in two other notes, so the same substance is a medication fact there and a restriction here."
+      },
+      {
+        "activity": "exercise",
+        "duration_days": 7,
+        "duration_note": "",
+        "limit": "",
+        "condition": ""
+      },
+      {
+        "activity": "work",
+        "duration_days": 3,
+        "duration_note": "",
+        "limit": "",
+        "condition": "if afebrile",
+        "comment": "condition now holds the trigger, so a still-febrile patient is no longer read as cleared."
+      },
+      {
+        "activity": "sun exposure",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "",
+        "comment": "'prolonged' is lost, so the fact bans sun exposure outright where the note permits ordinary exposure. The causal reason (photosensitivity) has no field."
+      }
+    ],
+    "unclassifiable": [
+      "Discontinue the ciprofloxacin if you develop tendon pain.",
+      "Increase oral fluid intake to at least 2 litres daily.",
+      "Void frequently and completely."
+    ]
+  },
+  "tka": {
+    "medications": [
+      {
+        "name": "enoxaparin",
+        "dose": 40,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "subcutaneous",
+        "frequency": "once daily",
+        "duration_days": 14,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "acetaminophen",
+        "dose": 1000,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 8 hours",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": "",
+        "comment": "The note says 'scheduled, NOT PRN' - an explicit negation. The schema expresses it only by the absence of ' as needed', so an emphatic instruction and a silent default are the same fact."
+      },
+      {
+        "name": "oxycodone",
+        "dose": 5,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "every 4 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "8 tablet",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "ondansetron",
+        "dose": 4,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "sublingual",
+        "frequency": "every 8 hours as needed",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      },
+      {
+        "name": "senna",
+        "dose": 8.6,
+        "dose_max": null,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily",
+        "duration_days": null,
+        "duration_note": "",
+        "max_per_day": "",
+        "then_dose": null,
+        "then_frequency": "",
+        "then_duration_days": null,
+        "then_duration_note": ""
+      }
+    ],
+    "follow_ups": [
+      {
+        "who": "physical therapy",
+        "within_days": 2,
+        "comment": "'begins in 2 days AND CONTINUES 3 TIMES WEEKLY'. follow_up has only 'who' and 'within_days', so a recurring course of therapy is recorded as a single appointment. This is the whole rehabilitation plan after a knee replacement."
+      },
+      {
+        "who": "orthopedics",
+        "within_days": 21
+      }
+    ],
+    "red_flags": [
+      {
+        "symptom": "calf pain",
+        "action": "call urgently",
+        "threshold": "",
+        "comment": "Post-arthroplasty DVT flag; the note's pairing with unilateral edema is split into two independent facts."
+      },
+      {
+        "symptom": "swelling",
+        "action": "call urgently",
+        "threshold": "",
+        "comment": "'unilateral lower extremity edema' - laterality and site both lost, which matters because bilateral or operative-knee swelling is expected after TKA."
+      },
+      {
+        "symptom": "fever",
+        "action": "call urgently",
+        "threshold": "over 101 F"
+      },
+      {
+        "symptom": "incision opening",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "wound drainage",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "advancing redness",
+        "action": "call urgently",
+        "threshold": ""
+      },
+      {
+        "symptom": "dyspnea",
+        "action": "emergency",
+        "threshold": ""
+      },
+      {
+        "symptom": "chest pain",
+        "action": "emergency",
+        "threshold": ""
+      }
+    ],
+    "restrictions": [
+      {
+        "activity": "bathing",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": "",
+        "comment": "From 'do not submerge the knee'. Equally readable as 'wound wetting'; the two activity values overlap and the note gives no duration at all."
+      },
+      {
+        "activity": "driving",
+        "duration_days": 42,
+        "duration_note": "",
+        "limit": "",
+        "condition": "while taking oxycodone",
+        "comment": "condition now holds the oxycodone clause alongside the 6-week figure."
+      },
+      {
+        "activity": "stairs",
+        "duration_days": 14,
+        "duration_note": "",
+        "limit": "",
+        "condition": "unassisted",
+        "comment": "condition='unassisted' records that stairs WITH help are permitted. Revision 1 forbade something the note allows; that is fixed."
+      },
+      {
+        "activity": "ointment on the wound",
+        "duration_days": null,
+        "duration_note": "",
+        "limit": "",
+        "condition": ""
+      }
+    ],
+    "unclassifiable": [
+      "The dressing is waterproof; showers are permitted.",
+      "Weight-bearing as tolerated with the walker.",
+      "Perform the prescribed range of motion exercises 3 times a day.",
+      "Elevate the extremity when seated.",
+      "Apply ice for 20 minutes every 2 hours while awake."
+    ]
+  }
+}

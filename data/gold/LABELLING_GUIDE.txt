@@ -1,0 +1,42 @@
+CANONICAL VALUE SPACE, revision 2 (use exactly these strings)
+
+Revision 2 responds to the round-1 annotator's findings. Changes:
+  * medication gains four second-phase fields, so a phased regimen
+    ('10 mg BID for 7 days, then 5 mg BID for 6 months') no longer
+    loses its second half:
+      then_dose, then_frequency, then_duration_days, then_duration_note
+    then_duration_note is "stop" for '... then stop', else as before.
+  * red_flag.threshold now carries direction and unit, not a bare
+    number: "over 101 F", "below 70 mg/dL", "over 3 pounds",
+    "over 10 minutes", "over 1 pads". Direction is "over" or "below".
+  * restriction gains `condition` for the clause that outlives the
+    number: "while taking oxycodone", "unassisted", "unsupervised",
+    "until symptom free". Empty string when there is none.
+  * new follow-up roles, new restriction activities, new symptoms
+    (listed below). 'one-sided weakness' is renamed to
+    'weakness or numbness'.
+  * 'seek immediate medical attention' is now action="emergency",
+    not "call urgently". It means present for care, not telephone.
+
+follow_up.who, one of:
+  anticoagulation clinic, cardiac rehabilitation, cardiac surgery, cardiology, dental, diabetes
+  education, endocrinology, gastroenterology, hematology, imaging, lab, lactation, nephrology,
+  neurology, obstetrics, oncology, orthopedics, physical therapy, primary care, pulmonary
+  rehabilitation, pulmonology, surgeon, wound care, clinic
+
+red_flag.symptom, one of:
+  abdominal rigidity, advancing redness, black stool, bleeding, bleeding gums, blood in urine,
+  bruising, calf pain, chest pain, confusion, coughing blood, crepitus, dyspnea, fainting,
+  fever, fluid from ears or nose, head injury, headache, high blood sugar, hopelessness,
+  hypotension, incision opening, induration, ketones, low blood sugar, low urine output, no
+  urine, orthopnea, palpitations, rash, rectal bleeding, seizure, severe pain, skin necrosis,
+  slurred speech, somnolence, sputum change, sternal instability, swelling, tendon pain, vision
+  change, vomiting, vomiting blood, weakness or numbness, weight gain, worsening abdominal pain,
+  wound drainage, wound redness
+
+red_flag.action, one of: emergency, call urgently, call
+
+restriction.activity, one of these, or "taking <drug>" for a named drug:
+  air travel, alcohol, bathing, driving, exercise, lifting, nsaids, ointment on the wound,
+  prolonged immobility, reaching or pushing, screens, sex, smoking, stairs, sun exposure, work,
+  wound wetting

@@ -1,0 +1,34 @@
+# note: gi-bleed
+# synthetic. upper GI bleed from NSAID-induced ulcer, endoscopically treated.
+DISCHARGE INSTRUCTIONS FOLLOWING UPPER GASTROINTESTINAL HAEMORRHAGE
+
+Diagnosis: bleeding gastric ulcer, NSAID induced. Endoscopic haemostasis achieved. Helicobacter pylori testing positive; eradication therapy prescribed.
+
+MEDICATIONS
+- Pantoprazole 40 mg PO BID for 8 weeks, then 40 mg PO QD.
+- Amoxicillin 1000 mg PO BID for 14 days.
+- Clarithromycin 500 mg PO BID for 14 days.
+- Ondansetron 4 mg PO q8h PRN nausea.
+- Ferrous sulfate 325 mg PO QD for iron deficiency.
+
+ABSOLUTE RESTRICTIONS
+- Do not take ibuprofen, naproxen, aspirin, or any other NSAID. An NSAID caused this bleed and another will cause the next one.
+- Do not drink alcohol for 8 weeks.
+- Avoid tobacco entirely; nicotine impairs ulcer healing.
+
+DIET
+- Resume a regular diet as tolerated.
+- Avoid foods that reproducibly cause dyspepsia.
+
+FOLLOW-UP
+- Follow up with gastroenterology in 3 weeks.
+- Follow up with your primary care physician in 1 week.
+- Laboratory visit for complete blood count in 7 days.
+- Repeat endoscopy in 8 weeks to confirm healing.
+
+RETURN TO THE EMERGENCY DEPARTMENT IMMEDIATELY FOR:
+- Haematemesis, or vomit that looks like coffee grounds
+- Melaena, or black tarry stool
+- Frank blood per rectum
+- Syncope, near-syncope, or palpitations
+- Dyspnea on exertion that is new

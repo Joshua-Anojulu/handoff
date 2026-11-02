@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Handoff: simplify the discharge note without losing the dose</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  :root {
+    --ink: #16181d; --mute: #63676f; --line: #dcdee3; --bg: #fbfbfc;
+    --panel: #fff; --accent: #1b5e9c;
+    --omit: #8a5a00; --omit-bg: #fff7e6;
+    --corrupt: #9b1c1c; --corrupt-bg: #fdeced;
+    --fab: #6b21a8; --fab-bg: #f6effc;
+    --soft: #4b5563; --soft-bg: #f1f3f5;
+    --ok: #15713f; --ok-bg: #eaf6ee;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.55 ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  header {
+    padding: 18px 22px 14px; border-bottom: 1px solid var(--line);
+    background: var(--panel);
+  }
+  h1 { margin: 0 0 3px; font-size: 18px; letter-spacing: -.01em; }
+  h1 small { font-weight: 400; color: var(--mute); margin-left: 8px; font-size: 14px; }
+  .sub { color: var(--mute); font-size: 13.5px; max-width: 92ch; }
+  .bar {
+    display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+    padding: 11px 22px; border-bottom: 1px solid var(--line);
+    background: var(--panel); position: sticky; top: 0; z-index: 5;
+  }
+  .bar label { font-size: 13px; color: var(--mute); }
+  select {
+    font: inherit; font-size: 13.5px; padding: 5px 8px;
+    border: 1px solid var(--line); border-radius: 6px; background: #fff;
+    color: var(--ink); max-width: 46vw;
+  }
+  .scores { display: flex; gap: 16px; flex-wrap: wrap; margin-left: auto; }
+  .score { font-size: 12.5px; color: var(--mute); white-space: nowrap; }
+  .score b { color: var(--ink); font-size: 14px; font-variant-numeric: tabular-nums; }
+  .arrow { color: var(--mute); }
+  .good { color: var(--ok); }
+  .bad { color: var(--corrupt); }
+
+  main {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px;
+    background: var(--line); align-items: stretch;
+  }
+  section { background: var(--panel); padding: 14px 16px 22px; min-width: 0; }
+  h2 {
+    margin: 0 0 10px; font-size: 11px; text-transform: uppercase;
+    letter-spacing: .07em; color: var(--mute); font-weight: 600;
+  }
+  pre.note {
+    margin: 0; white-space: pre-wrap; word-wrap: break-word;
+    font: 13.5px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  mark {
+    background: #fff3bf; border-radius: 2px; padding: 0 1px;
+    box-shadow: inset 0 -2px 0 #ffe066;
+  }
+
+  .verdict {
+    padding: 9px 11px; border-radius: 7px; font-size: 13px; margin-bottom: 12px;
+    border: 1px solid;
+  }
+  .verdict.clean { background: var(--ok-bg); border-color: #bfe3cd; color: var(--ok); }
+  .verdict.dirty { background: var(--corrupt-bg); border-color: #f3c7ca; color: var(--corrupt); }
+
+  .item {
+    border: 1px solid var(--line); border-left-width: 3px; border-radius: 6px;
+    padding: 8px 10px; margin-bottom: 7px; font-size: 13px; background: #fff;
+  }
+  .item .tag {
+    font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em;
+    font-weight: 700; display: block; margin-bottom: 2px;
+  }
+  .item.omission { border-left-color: var(--omit); background: var(--omit-bg); }
+  .item.omission .tag { color: var(--omit); }
+  .item.corruption { border-left-color: var(--corrupt); background: var(--corrupt-bg); }
+  .item.corruption .tag { color: var(--corrupt); }
+  .item.fabrication { border-left-color: var(--fab); background: var(--fab-bg); }
+  .item.fabrication .tag { color: var(--fab); }
+  .item.softening { border-left-color: var(--soft); background: var(--soft-bg); }
+  .item.softening .tag { color: var(--soft); }
+
+  table.facts { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table.facts th {
+    text-align: left; font-size: 10.5px; text-transform: uppercase;
+    letter-spacing: .06em; color: var(--mute); font-weight: 600;
+    border-bottom: 1px solid var(--line); padding: 4px 6px 4px 0;
+  }
+  table.facts td {
+    padding: 4px 6px 4px 0; border-bottom: 1px solid #eef0f3;
+    vertical-align: top; font-variant-numeric: tabular-nums;
+  }
+  table.facts td.k { color: var(--mute); white-space: nowrap; }
+  table.facts tr.changed td { background: var(--corrupt-bg); }
+  table.facts tr.gone td { background: var(--omit-bg); }
+  table.facts tr.new td { background: var(--fab-bg); }
+  .kind-row td {
+    padding-top: 11px; font-size: 10.5px; text-transform: uppercase;
+    letter-spacing: .06em; color: var(--mute); font-weight: 600; border: 0;
+  }
+  .rounds { font-size: 12.5px; color: var(--mute); margin-bottom: 12px; }
+  .rounds code {
+    background: #f1f3f5; border-radius: 4px; padding: 1px 4px; font-size: 12px;
+  }
+  .legend { font-size: 12px; color: var(--mute); margin-top: 14px; line-height: 1.7; }
+  .legend span { display: inline-block; margin-right: 12px; }
+  .swatch {
+    display: inline-block; width: 9px; height: 9px; border-radius: 2px;
+    margin-right: 4px; vertical-align: baseline;
+  }
+  footer {
+    padding: 16px 22px 30px; color: var(--mute); font-size: 12.5px;
+    border-top: 1px solid var(--line); background: var(--panel);
+    max-width: 100ch;
+  }
+  footer b { color: var(--ink); }
+  @media (max-width: 1000px) {
+    main { grid-template-columns: 1fr; }
+    select { max-width: 100%; }
+  }
+</style>
+
+<header>
+  <h1>Handoff <small>simplify the discharge note without losing the dose</small></h1>
+  <p class="sub">
+    Plenty of tools will rewrite discharge instructions at a lower reading level.
+    This one re-reads its own rewrite with the same extractor it used on the
+    original, and reports every instruction the rewrite dropped, changed or
+    invented. The middle column is the point.
+  </p>
+</header>
+
+<div class="bar">
+  <label for="pick">Note</label>
+  <select id="pick"></select>
+  <div class="scores" id="scores"></div>
+</div>
+
+<main>
+  <section>
+    <h2>Original <span id="o-meta" style="text-transform:none;letter-spacing:0"></span></h2>
+    <pre class="note" id="original"></pre>
+  </section>
+  <section>
+    <h2>Verifier</h2>
+    <div id="verdict"></div>
+    <div class="rounds" id="rounds"></div>
+    <div id="findings"></div>
+    <h2 style="margin-top:18px">Facts, side by side</h2>
+    <table class="facts"><tbody id="facttable"></tbody></table>
+    <div class="legend">
+      <span><i class="swatch" style="background:#8a5a00"></i>omission: dropped</span>
+      <span><i class="swatch" style="background:#9b1c1c"></i>corruption: changed</span>
+      <span><i class="swatch" style="background:#6b21a8"></i>fabrication: invented</span>
+      <span><i class="swatch" style="background:#4b5563"></i>wording only, not counted</span>
+    </div>
+  </section>
+  <section>
+    <h2>Rewrite <span id="r-meta" style="text-transform:none;letter-spacing:0"></span></h2>
+    <pre class="note" id="rewrite"></pre>
+  </section>
+</main>
+
+<footer id="foot"></footer>
+
+<script>
+const $ = id => document.getElementById(id);
+let DATA = null;
+
+const esc = s => String(s ?? '').replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const show = v => (v === null || v === undefined || v === '') ? 'unstated' : String(v);
+
+// Highlight the rare clinical terms the text uses without explaining them.
+// Same list the readability module produced, so the page cannot disagree with
+// the measurement.
+function highlight(text, terms) {
+  let out = esc(text);
+  for (const term of [...terms].sort((a, b) => b.length - a.length)) {
+    const re = new RegExp('\\b(' + term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')\\b', 'gi');
+    out = out.replace(re, '<mark>$1</mark>');
+  }
+  return out;
+}
+
+function scoreRow(note) {
+  const d = note.diff, b = note.before, a = note.after;
+  const dir = (from, to, lowerIsBetter = true) => {
+    const better = lowerIsBetter ? to < from : to > from;
+    return `${from} <span class="arrow">&rarr;</span> <span class="${better ? 'good' : ''}">${to}</span>`;
+  };
+  return [
+    `<div class="score">facts <b>${d.original_count}</b></div>`,
+    `<div class="score">reading grade <b>${dir(b.grade, a.grade)}</b></div>`,
+    `<div class="score">unexplained terms <b>${dir(b.unexplained_terms.length, a.unexplained_terms.length)}</b></div>`,
+    `<div class="score">fidelity <b class="${d.fidelity === 1 ? 'good' : 'bad'}">${d.fidelity.toFixed(3)}</b></div>`,
+  ].join('');
+}
+
+function findings(note) {
+  const d = note.diff;
+  const groups = [
+    ['corruption', d.corruptions], ['fabrication', d.fabrications],
+    ['omission', d.omissions], ['softening', d.softenings],
+  ];
+  let html = '';
+  for (const [kind, items] of groups) {
+    for (const item of items) {
+      html += `<div class="item ${kind}"><span class="tag">${kind}${
+        kind === 'softening' ? ' · wording, not counted' : ''}</span>${esc(item.message)}</div>`;
+    }
+  }
+  return html || '<div class="item softening"><span class="tag">nothing to report</span>'
+    + 'Every instruction in the original survives the rewrite unchanged.</div>';
+}
+
+// One row per field, original value against rewrite value, so a changed dose is
+// visible as a changed dose rather than as two unrelated facts.
+function factTable(note) {
+  const before = new Map(note.facts.map(f => [f.kind + '|' + f.identity.join('|'), f]));
+  const after = new Map(note.rewrite_facts.map(f => [f.kind + '|' + f.identity.join('|'), f]));
+  const labels = {
+    medication: ['dose', 'dose max', 'unit', 'route', 'frequency', 'days', 'duration',
+                 'daily ceiling', 'then dose', 'then frequency', 'then days', 'then duration'],
+    follow_up: ['within days'],
+    red_flag: ['action', 'threshold'],
+    restriction: ['days', 'duration', 'limit', 'condition'],
+  };
+  const order = ['medication', 'follow_up', 'red_flag', 'restriction'];
+  let html = '';
+  for (const kind of order) {
+    const keys = [...new Set([...before.keys(), ...after.keys()])]
+      .filter(k => k.startsWith(kind + '|')).sort();
+    if (!keys.length) continue;
+    html += `<tr class="kind-row"><td colspan="3">${kind.replace('_', ' ')}</td></tr>`;
+    html += '<tr><th>what</th><th>original</th><th>rewrite</th></tr>';
+    for (const key of keys) {
+      const a = before.get(key), b = after.get(key);
+      const name = key.split('|').slice(1).filter(p => p !== '1').join(' ');
+      const cls = !b ? 'gone' : !a ? 'new' : '';
+      html += `<tr class="${cls}"><td class="k"><b>${esc(name)}</b></td>`
+        + `<td>${a ? '' : 'absent'}</td><td>${b ? '' : 'absent'}</td></tr>`;
+      const fields = labels[kind] || [];
+      const len = Math.max(a ? a.value.length : 0, b ? b.value.length : 0);
+      for (let i = 0; i < len; i++) {
+        const av = a ? a.value[i] : null, bv = b ? b.value[i] : null;
+        if ((av === null || av === '') && (bv === null || bv === '')) continue;
+        const changed = a && b && String(av) !== String(bv);
+        html += `<tr class="${changed ? 'changed' : ''}">`
+          + `<td class="k">${esc(fields[i] || 'field ' + i)}</td>`
+          + `<td>${esc(show(av))}</td><td>${esc(show(bv))}</td></tr>`;
+      }
+    }
+  }
+  return html;
+}
+
+function roundsLine(note) {
+  if (note.rounds.length === 1 && note.converged) {
+    return 'Converged on the first pass, so no repair round was needed.';
+  }
+  const parts = note.rounds.map(r =>
+    `<code>round ${r.round}: ${r.errors} error${r.errors === 1 ? '' : 's'}, `
+    + `grade ${r.grade}</code>`);
+  return 'Repair loop ' + parts.join(' &rarr; ')
+    + (note.converged ? '' : '. Capped without converging, so the note is '
+       + 'surfaced for human review rather than shipped.');
+}
+
+function render() {
+  const note = DATA.notes.find(n => n.id === $('pick').value) || DATA.notes[0];
+  $('scores').innerHTML = scoreRow(note);
+  $('original').innerHTML = highlight(note.original, note.before.unexplained_terms);
+  $('rewrite').innerHTML = highlight(note.rewrite, note.after.unexplained_terms);
+  $('o-meta').textContent = `grade ${note.before.grade}`;
+  $('r-meta').textContent = `grade ${note.after.grade}`;
+  const clean = note.diff.omissions.length + note.diff.corruptions.length
+    + note.diff.fabrications.length === 0;
+  $('verdict').className = '';
+  $('verdict').innerHTML = `<div class="verdict ${clean ? 'clean' : 'dirty'}">`
+    + (clean
+      ? `All ${note.diff.original_count} instructions survive. Fidelity 1.000.`
+      : `${note.diff.omissions.length} dropped, ${note.diff.corruptions.length} changed, `
+        + `${note.diff.fabrications.length} invented. Fidelity `
+        + `${note.diff.fidelity.toFixed(3)}.`)
+    + '</div>';
+  $('rounds').innerHTML = roundsLine(note);
+  $('findings').innerHTML = findings(note);
+  $('facttable').innerHTML = factTable(note);
+}
+
+fetch('data.json').then(r => r.json()).then(data => {
+  DATA = data;
+  $('pick').innerHTML = data.notes.map(n =>
+    `<option value="${n.id}">${n.id}: ${n.diff.original_count} facts, `
+    + `fidelity ${n.diff.fidelity.toFixed(3)}</option>`).join('');
+  $('pick').onchange = render;
+  const s = data.summary;
+  $('foot').innerHTML =
+    `<p><b>Across all ${s.notes} notes:</b> ${s.facts} instructions, pooled fidelity `
+    + `${s.pooled_fidelity}, mean reading grade ${s.mean_grade_before ?? '?'} to `
+    + `${s.mean_grade_after ?? '?'}. ${s.omissions} dropped, ${s.corruptions} changed, `
+    + `${s.fabrications} invented. ${s.notes - s.clean_notes} note(s) needed review.</p>`
+    + `<p>Simplifier: <b>${data.simplifier}</b>. The offline substitution baseline `
+    + `cannot restructure a sentence, so it loses very little and reaches only about `
+    + `grade 7.5. That high fidelity is the floor, not a result. Run `
+    + `<code>eval.py --simplifier claude</code> for the model-backed numbers.</p>`
+    + `<p>The extractor is deterministic, so no language model grades a language `
+    + `model here, and every number on this page comes from the same code paths `
+    + `<code>eval.py</code> measures. Notes are synthetic; no patient data was used.</p>`;
+  render();
+}).catch(e => {
+  $('foot').textContent = 'data.json is missing. Run: python scripts/build_web_data.py';
+  console.error(e);
+});
+</script>

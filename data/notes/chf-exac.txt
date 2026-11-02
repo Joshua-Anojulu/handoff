@@ -1,0 +1,22 @@
+# note: chf-exac
+# synthetic. acute decompensated heart failure, discharged on oral diuretic.
+Discharge summary and instructions
+
+You were admitted for an exacerbation of congestive heart failure with volume overload. Diuresis was achieved with intravenous furosemide and you have been transitioned to an oral regimen.
+
+Medications: Take furosemide 40 mg PO QD each morning. Take metoprolol succinate 25 mg PO QD. Take lisinopril 10 mg PO QD. Take spironolactone 25 mg PO QD. Take potassium chloride 20 mEq PO QD with food.
+
+Do not take ibuprofen, naproxen, or any other NSAID, as these antagonise your diuretic and may precipitate a recurrent exacerbation.
+
+Restrict sodium intake to under 2 grams daily. Restrict fluid intake to 1.5 litres daily. Weigh yourself each morning after voiding and record the value.
+
+Follow up with cardiology in 7 days. Follow up with your primary care physician in 14 days. A laboratory visit for basic metabolic panel is required in 5 days.
+
+Contact the heart failure clinic right away if you experience:
+- Weight gain of more than 3 pounds in one day
+- Increasing dyspnea or orthopnea
+- Edema of the lower extremities that is worsening
+- Palpitations
+- Syncope or near-syncope
+
+Call 911 if you develop chest pain or severe shortness of breath at rest.

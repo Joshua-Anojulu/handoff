@@ -1,0 +1,33 @@
+# note: copd-exac
+# synthetic. COPD exacerbation, steroid taper plus antibiotic course.
+CHRONIC OBSTRUCTIVE PULMONARY DISEASE: DISCHARGE PLAN
+
+Admitted for an acute exacerbation. Treated with systemic corticosteroid, nebulised bronchodilator, and antibiotic.
+
+MEDICATIONS
+- Prednisone 40 mg PO QD for 5 days, then stop. Do not taper.
+- Doxycycline 100 mg PO BID for 5 days.
+- Albuterol inhaler 2 puffs q4h PRN dyspnea.
+- Fluticasone-salmeterol inhaler 1 puff BID. Rinse your mouth after each use.
+- Pantoprazole 40 mg PO QD while on prednisone.
+
+OXYGEN
+- Continuous home oxygen at 2 litres per minute by nasal cannula.
+- Do not smoke, and do not permit smoking near the oxygen concentrator. This is a fire hazard.
+
+PULMONARY REHABILITATION
+- Pulmonary rehabilitation referral has been placed. The programme will contact you within 2 weeks.
+- Perform deep breathing exercises every hour while awake.
+
+FOLLOW-UP
+- Follow up with pulmonology in 10 days.
+- Follow up with your primary care physician in 5 days.
+
+WARNING SIGNS - call the pulmonary service right away:
+- Increasing dyspnea despite rescue inhaler use
+- Change in sputum colour or volume
+- Temperature above 100.8 F
+- Peripheral edema
+- Somnolence or confusion, which may indicate hypercapnia
+
+Call 911 for dyspnea at rest that does not improve with the rescue inhaler.

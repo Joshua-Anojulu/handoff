@@ -1,0 +1,30 @@
+# note: afib-warfarin
+# synthetic. new-onset atrial fibrillation, anticoagulation initiated.
+DISCHARGE INSTRUCTIONS
+
+You were admitted with new-onset atrial fibrillation. Rate control was achieved and anticoagulation has been initiated for stroke prophylaxis.
+
+MEDICATIONS
+- Warfarin 5 mg PO QHS. Your dose will be titrated according to INR.
+- Metoprolol tartrate 25 mg PO BID.
+- Pantoprazole 40 mg PO QD for gastric prophylaxis.
+
+ANTICOAGULATION PRECAUTIONS
+- Do not take aspirin, ibuprofen, or naproxen. These potentiate bleeding.
+- Maintain a consistent intake of vitamin K containing foods. Do not abruptly increase or decrease leafy green vegetables.
+- Abstain from alcohol.
+- Use an electric razor and a soft toothbrush.
+
+FOLLOW-UP
+- The anticoagulation clinic will check your INR in 3 days.
+- Follow up with cardiology in 2 weeks.
+- Follow up with your primary care physician in 4 weeks.
+
+SEEK IMMEDIATE MEDICAL ATTENTION FOR:
+- Bleeding that will not stop after 10 minutes of pressure
+- Blood in the urine or stool, or black tarry stool
+- A severe headache, or any head injury however minor
+- New weakness or numbness on one side
+- Syncope
+
+Call the anticoagulation clinic for any missed warfarin dose. Do not double a dose to compensate.

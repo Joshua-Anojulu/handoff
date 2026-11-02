@@ -1,0 +1,30 @@
+# note: pyelonephritis
+# synthetic. acute pyelonephritis treated with IV then oral antibiotics.
+DISCHARGE INSTRUCTIONS - ACUTE PYELONEPHRITIS
+
+Diagnosis: acute pyelonephritis, left kidney. Urine culture grew E. coli sensitive to ciprofloxacin.
+
+Medications
+- Ciprofloxacin 500 mg PO BID for 10 days. Complete the full course even once you feel well.
+- Acetaminophen 650 mg PO q6h PRN fever or flank pain.
+- Ondansetron 4 mg PO q8h PRN nausea.
+
+Precautions while taking ciprofloxacin
+- Do not take antacids, calcium, or iron within 2 hours of a dose. They impair absorption.
+- Avoid prolonged sun exposure. This antibiotic causes photosensitivity.
+- Report any tendon pain immediately and discontinue the drug.
+
+Supportive care
+- Increase oral fluid intake to at least 2 litres daily.
+- Void frequently and completely.
+
+Activity
+- No strenuous exercise for 1 week.
+- You may return to work in 3 days if afebrile.
+
+Follow-up
+- Follow up with your primary care physician in 4 days.
+- Repeat urine culture in 2 weeks.
+- A renal ultrasound has been ordered; the imaging department will call you.
+
+Return to the emergency department for temperature above 101 F after 48 hours of antibiotics, intractable vomiting preventing oral intake, worsening flank pain, hypotension or near-syncope, or decreased urine output.

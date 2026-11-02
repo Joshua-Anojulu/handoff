@@ -1,0 +1,31 @@
+# note: dka
+# synthetic. diabetic ketoacidosis resolved, new basal-bolus insulin regimen.
+DIABETES DISCHARGE INSTRUCTIONS
+
+You were admitted in diabetic ketoacidosis, which has resolved. You are being discharged on a subcutaneous insulin regimen.
+
+INSULIN
+- Insulin glargine 18 units subcutaneous QHS. This is your long-acting insulin and must be taken every night even if you are not eating.
+- Insulin lispro 6 units subcutaneous TID with meals. Omit the dose if you skip the meal.
+
+OTHER MEDICATIONS
+- Metformin 500 mg PO BID with food.
+- Lisinopril 5 mg PO QD.
+
+MONITORING
+- Check capillary blood glucose four times a day: before each meal and at bedtime.
+- Check urine ketones if blood glucose exceeds 250 mg/dL.
+- Record all values and bring the log to every appointment.
+
+SICK DAY RULES
+- Do not omit basal insulin when you are unwell, even if you are not eating.
+- Maintain hydration with sugar-free fluids.
+- Check glucose every 4 hours while unwell.
+
+FOLLOW-UP
+- Follow up with endocrinology in 7 days.
+- Diabetes education appointment in 3 days.
+- Follow up with your primary care physician in 2 weeks.
+- Laboratory visit for HbA1c in 3 months.
+
+Call the diabetes service immediately for persistent vomiting, blood glucose above 300 mg/dL on two consecutive checks, positive urine ketones, or blood glucose below 70 mg/dL that does not correct with oral carbohydrate. Call 911 for confusion or lethargy.
